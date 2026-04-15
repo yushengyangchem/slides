@@ -16,7 +16,6 @@
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
-      onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});"
     ></script>
   </head>
   <body>
@@ -170,6 +169,46 @@
           </div>
         </section>
 
+        <section class="slide">
+          <span class="tag">LaTeX</span>
+          <h2>Render Inline and Display Math with KaTeX</h2>
+          <div class="formula-layout">
+            <div class="formula-panel">
+              <h3>Inline math</h3>
+              <p>
+                Use inline formulas inside normal text, such as
+                <span class="formula-inline">$E = mc^2$</span>
+                and
+                <span class="formula-inline"
+                  >$p(x \mid z) = \frac{p(z \mid x)p(x)}{p(z)}$</span
+                >.
+              </p>
+              <p class="formula-note">
+                Inline mode works well for short symbols, variables, and compact
+                equations that should stay in the sentence flow.
+              </p>
+              <pre class="formula-source">$E = mc^2$</pre>
+            </div>
+
+            <div class="formula-panel">
+              <h3>Display math</h3>
+              <div class="formula-block">
+                $$\hat{\beta} = \underset{\beta}{\arg\min}\ \sum_{i=1}^{n}
+                \left(y_i - x_i^\top \beta\right)^2 + \lambda \lVert \beta
+                \rVert_2^2$$
+              </div>
+              <p class="formula-note">
+                Display mode is better for derivations, optimization objectives,
+                or any equation that needs visual emphasis.
+              </p>
+              <pre class="formula-source">
+$$\hat{\beta} = \underset{\beta}{\arg\min}\ \sum_{i=1}^{n}
+\left(y_i - x_i^\top \beta\right)^2 + \lambda \lVert \beta \rVert_2^2$$</pre
+              >
+            </div>
+          </div>
+        </section>
+
         <section class="slide slide-closing">
           <h2>Thank You</h2>
           <p class="lead">Thank you for your time and attention.</p>
@@ -197,7 +236,7 @@
         </div>
 
         <div class="counter-wrap">
-          <div class="counter" id="counter">1 / 5</div>
+          <div class="counter" id="counter">1 / 6</div>
         </div>
 
         <div class="right">
@@ -219,5 +258,26 @@
     </div>
 
     <script src="assets/js/slides.js" defer></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        if (typeof renderMathInElement !== "function") return;
+
+        renderMathInElement(document.getElementById("slides"), {
+          delimiters: [
+            { left: "$$", right: "$$", display: true },
+            { left: "$", right: "$", display: false },
+          ],
+          throwOnError: false,
+          ignoredTags: [
+            "script",
+            "noscript",
+            "style",
+            "textarea",
+            "pre",
+            "code",
+          ],
+        });
+      });
+    </script>
   </body>
 </html>

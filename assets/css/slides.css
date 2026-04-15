@@ -249,6 +249,96 @@ code {
   box-shadow: 0 10px 30px rgba(54, 40, 26, 0.06);
 }
 
+.formula-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.formula-panel {
+  display: grid;
+  gap: 0.9rem;
+  padding: 1.3rem 1.35rem;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: rgba(250, 253, 255, 0.82);
+  box-shadow: 0 10px 30px rgba(54, 40, 26, 0.06);
+}
+
+.formula-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  padding: 0.2rem 0;
+}
+
+.formula-block {
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(29, 71, 115, 0.1);
+  border-radius: 18px;
+  background: linear-gradient(
+    135deg,
+    rgba(47, 111, 237, 0.08),
+    rgba(255, 255, 255, 0.9)
+  );
+  overflow-x: auto;
+}
+
+.formula-note {
+  color: #38506d;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.formula-code {
+  display: block;
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border-radius: 16px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+}
+
+.formula-rendered {
+  border: 1px solid rgba(29, 71, 115, 0.1);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.formula-rendered .katex-display {
+  margin: 0;
+}
+
+.formula-source {
+  margin: 0;
+  padding: 0.75rem 0.9rem;
+  border: 1px dashed rgba(29, 71, 115, 0.18);
+  border-radius: 16px;
+  background: rgba(244, 249, 255, 0.86);
+  color: #31506f;
+  font-family: "JetBrains Mono", "Fira Code", "SFMono-Regular", monospace;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+
+.formula-panel .katex-display {
+  margin: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.formula-panel .katex {
+  font-size: 1.08em;
+}
+
+.formula-panel p > .katex {
+  font-size: 1em;
+}
+
 .meta-card {
   display: grid;
   gap: 0.45rem;
@@ -581,6 +671,7 @@ button:disabled {
   .meta-row,
   .split-layout,
   .grid,
+  .formula-layout,
   .symbol-grid,
   .micro-layout,
   .step-row {
@@ -673,6 +764,7 @@ button:disabled {
   .meta-row,
   .split-layout,
   .grid,
+  .formula-layout,
   .symbol-grid,
   .micro-layout,
   .step-row {
@@ -683,6 +775,7 @@ button:disabled {
   .panel,
   .card,
   .quote-band,
+  .formula-panel,
   .symbol-card,
   .mini-callout,
   .step-chip {

@@ -11,7 +11,9 @@
   --shadow: 0 24px 70px rgba(20, 38, 61, 0.14);
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
